@@ -36,6 +36,15 @@ public class FragmentList extends ListFragment implements AdapterView.OnItemClic
         getListView().setOnItemClickListener(this);
     }
 
+    @Override
+    public void onActivityCreated(Bundle informa) {
+        super.onActivityCreated(savedInstanceState);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.Informacion, android.R.layout.simple_list_item_1);
+        setListAdapter(adapter);
+        getListView().setOnItemClickListener(this);
+    }
+
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
